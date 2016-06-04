@@ -74,7 +74,18 @@
                                 <state key="normal" title="Project Name">
                                     <color key="titleColor" red="0.49803921580314636" green="0.49803921580314636" blue="0.49803921580314636" alpha="0.26000000000000001" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="drop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="epJ-IR-RWd"/>
+                                </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pam-1o-tsA">
+                                <rect key="frame" x="29" y="150" width="223" height="63"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="HWF-dO-2XB"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Xgz-6w-6sf"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -83,11 +94,12 @@
                         <outlet property="customerName" destination="XTw-ai-Qt1" id="Aac-Vw-ew8"/>
                         <outlet property="email" destination="Lmx-Cw-iUx" id="8Yr-Nc-uwS"/>
                         <outlet property="mobileNo" destination="e3V-6R-8uK" id="YQt-mb-812"/>
-                        <outlet property="projecName" destination="qhv-UD-kXP" id="yaa-Yj-kVe"/>
+                        <outlet property="projectName" destination="qhv-UD-kXP" id="sgC-vf-e66"/>
                         <outlet property="referenceNo" destination="L40-dO-LLM" id="H0h-ao-eyN"/>
                         <outlet property="referredBy" destination="jvA-FZ-XuR" id="X8e-ct-HTr"/>
                         <outlet property="remarks" destination="vK0-Li-H51" id="pBJ-zN-8Fl"/>
                         <outlet property="submit" destination="20H-FR-uXe" id="xV5-9x-9KS"/>
+                        <outlet property="tableView" destination="Pam-1o-tsA" id="IPi-xj-S2T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

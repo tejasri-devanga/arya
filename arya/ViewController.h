@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *projecName;
+@property (weak, nonatomic) IBOutlet UIButton *projectName;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UITextField *customerName;
 @property (weak, nonatomic) IBOutlet UITextField *mobileNo;
@@ -19,6 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *referenceNo;
 @property (weak, nonatomic) IBOutlet UITextField *remarks;
 @property (weak, nonatomic) IBOutlet UIButton *submit;
-
+-(IBAction)drop:(id)sender;
 @end
 
