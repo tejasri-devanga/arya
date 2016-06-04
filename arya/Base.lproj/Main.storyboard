@@ -17,13 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                     Aryamitra projects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-JY-oNC">
-                                <rect key="frame" x="0.0" y="18" width="320" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqD-gg-mWE">
                                 <rect key="frame" x="19" y="115" width="281" height="293"/>
                                 <color key="backgroundColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.0" alpha="0.12" colorSpace="calibratedRGB"/>
@@ -69,10 +62,10 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhv-UD-kXP">
-                                <rect key="frame" x="29" y="120" width="252" height="30"/>
+                                <rect key="frame" x="27" y="120" width="254" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Project Name">
-                                    <color key="titleColor" red="0.49803921580314636" green="0.49803921580314636" blue="0.49803921580314636" alpha="0.26000000000000001" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" Project Name">
+                                    <color key="titleColor" red="0.49803921580314636" green="0.49803921580314636" blue="0.49803921580314636" alpha="0.37" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="drop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="epJ-IR-RWd"/>
@@ -86,6 +79,18 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Xgz-6w-6sf"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="fhe-gd-7O4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Aryamitra projects" id="xYq-Wz-VWu"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -94,6 +99,7 @@
                         <outlet property="customerName" destination="XTw-ai-Qt1" id="Aac-Vw-ew8"/>
                         <outlet property="email" destination="Lmx-Cw-iUx" id="8Yr-Nc-uwS"/>
                         <outlet property="mobileNo" destination="e3V-6R-8uK" id="YQt-mb-812"/>
+                        <outlet property="navBar" destination="fhe-gd-7O4" id="B2k-75-pA0"/>
                         <outlet property="projectName" destination="qhv-UD-kXP" id="sgC-vf-e66"/>
                         <outlet property="referenceNo" destination="L40-dO-LLM" id="H0h-ao-eyN"/>
                         <outlet property="referredBy" destination="jvA-FZ-XuR" id="X8e-ct-HTr"/>

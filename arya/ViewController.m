@@ -19,11 +19,15 @@ NSArray *data;//=[NSArray arrayWithObject:@"A"];
     [super viewDidLoad];
     [self.submit.layer setBorderWidth:2];
     [self.submit.layer setBorderColor:[[UIColor whiteColor]CGColor]];
+    [self.projectName.layer setBorderWidth:1.2];
+    [self.projectName.layer setBorderColor:[[UIColor lightTextColor]CGColor]];
     self.submit.layer.cornerRadius=5;
     
+    
+
 
     self.projectName.layer.cornerRadius=5;
-     data=[NSArray arrayWithObjects: @"A",@"B",nil];
+     data=[NSArray arrayWithObjects: @" A",@" B",nil];
     
     [self.view addSubview:self.tableView];
     self.tableView.hidden=YES;
@@ -50,6 +54,8 @@ NSArray *data;//=[NSArray arrayWithObject:@"A"];
     {
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mainCell"];
     }
+    UIFont *myFont = [ UIFont fontWithName: @"Arial" size: 14.0 ];
+    cell.textLabel.font  = myFont;
     cell.textLabel.text=[data objectAtIndex:indexPath.row];
     return cell;
 }
