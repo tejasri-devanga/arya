@@ -10,7 +10,10 @@
 
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *listButton;
+@property (strong, nonatomic) IBOutlet UIView *navController;
 
+@property (weak, nonatomic) IBOutlet UITableView *listtableView;
 @property (weak, nonatomic) IBOutlet UIButton *projectName;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,5 +26,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *remarks;
 @property (weak, nonatomic) IBOutlet UIButton *submit;
 -(IBAction)drop:(id)sender;
+-(IBAction)list:(id)sender;
 @end
 

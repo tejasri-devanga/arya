@@ -12,7 +12,7 @@
 //@property (nonatomic,strong)NSArray *data;
 
 @end
-NSArray *data;//=[NSArray arrayWithObject:@"A"];
+NSArray *data,*listData;//=[NSArray arrayWithObject:@"A"];
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -28,9 +28,12 @@ NSArray *data;//=[NSArray arrayWithObject:@"A"];
 
     self.projectName.layer.cornerRadius=5;
      data=[NSArray arrayWithObjects: @" A",@" B",nil];
+    listData=[NSArray arrayWithObjects: @" listA",@" listB",@" listC",@" listD",@" listE",nil];
     
     [self.view addSubview:self.tableView];
     self.tableView.hidden=YES;
+    self.listtableView.hidden=YES;
+
       // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -44,10 +47,14 @@ NSArray *data;//=[NSArray arrayWithObject:@"A"];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    if(tableView.tag==2)
+    return [data count];
+    else
+        return [listData count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(tableView.tag==2){
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"mainCell"];
     
     if(cell==nil)
@@ -57,16 +64,41 @@ NSArray *data;//=[NSArray arrayWithObject:@"A"];
     UIFont *myFont = [ UIFont fontWithName: @"Arial" size: 14.0 ];
     cell.textLabel.font  = myFont;
     cell.textLabel.text=[data objectAtIndex:indexPath.row];
-    return cell;
+        return cell;}
+    
+    else{
+        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"listCell"];
+        
+        if(cell==nil)
+        {
+            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"listCell"];
+        }
+        UIFont *myFont = [ UIFont fontWithName: @"Arial" size: 14.0 ];
+        cell.textLabel.font  = myFont;
+        cell.textLabel.text=[listData objectAtIndex:indexPath.row];
+        return cell;
+    }
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(tableView.tag==2){
     [self.projectName setTitle:[data objectAtIndex:indexPath.row] forState:UIControlStateNormal];
-    self.tableView.hidden=YES;
+        self.tableView.hidden=YES;}
+    else
+    {
+        self.listtableView.hidden=YES;
+        [self performSegueWithIdentifier:@"next" sender:self];
+
+
+    }
 }
 
 -(IBAction)drop:(id)sender
 {
     self.tableView.hidden=NO;
+}
+-(IBAction)list:(id)sender
+{
+    self.listtableView.hidden=NO;
 }
 
 @end
